@@ -1,0 +1,182 @@
+---------
+name: New Mission
+description: This is a new mission.  Edit these fields to customize the display.
+author: Yourname Here
+prerequisites: []
+language: python
+premium: False
+under_construction: True
+file_list: ['test.txt', 'crime_rates.csv', 'titanic_survival.csv']
+mission_number: 1
+demo: False
+imports: |
+  # You can add whatever code you want here -- this will be imported before code in vars is run.
+  # If you have any libraries or functions you want to define to compute the initial vars, here is the place.
+  import pandas
+  def do_whatever(text):
+      print("Whatever {0}".format(text))
+vars:
+  1: |
+    # vars is a dictionary of sets of initial variables.
+    # These variables are available to the user when a screen is first loaded.
+    # It prevents you from having to put a bunch of boilerplate code into initial_display.
+    # Each dictionary key is a number, starting from 1, and has the code to generate a variable set.
+    # If you want to use a variable set in a screen, just specify the initial_vars key with the variable set number as the value (example below).
+    f = "titanic_survival.csv"
+    data = pandas.read_csv(f)
+    titanic_survival = data.dropna(subset=["age", "sex"])
+
+---------
+
+name: Sample introduction
+type: video
+video: http://youtu.be/kDDiR7TDGw0
+
+---------
+
+name: Intro code
+type: code
+left_text: |
+  <p>This is where the text that goes in the left panel of the code screen is written.</p>
+  <p>This text is used to introduce the screen, and describe any background information needed.</p>
+  <p>This file is in .yaml format.</p>
+  <p>Note the vertical line (|) above -- this indicates that this block is a multiline string.  It is suggested to use this for any string -- if you don't, some symbols, like :, can cause issues</p>
+  <p>Any block needs to be indented 2 spaces.</p>
+  <p>You can use any valid html tags here.</p>
+  <p>The "code" tag will let you write inline variable names like this:  <code>b</code> is a variable.</p>
+  <p>Try to do this for all variables and function names -- it makes it easier for the reader.</p>
+  <p>The "python" tag will let you add code blocks.  Here's an example: <python>numpy_array[0,0]
+  numpy_array[:,0]
+  numpy_array[0,:]</python></p>
+initial_display: |
+  # This is the area where code is displayed.
+  # The initial_display is the code that is shown to the user when the screen is first loaded.
+  # You can add comment in here to clarify code, imports, and any code you want.
+  b = 10
+  a = b * 20
+
+  # You have to indent 2 spaces for the yaml format -- indent 4 spaces when you are making a loop or other indented python block.
+  for i in [0, 1, 2]:
+      print(i)
+      if i == 0:
+          print("First item!")
+
+  # If you want to add a plot, you need to do something special:
+  import matplotlib.pyplot as plt
+  day_numbers = [1,2,3,4,5,6,7]
+  cars_in_parking_lot = [5,6,4,2,1,7,8]
+
+  # You always have to follow plotting commands with plt.show() and plt.clf(), otherwise they won't show up.
+  plt.plot(day_numbers, cars_in_parking_lot)
+  plt.show()
+  plt.clf()
+instructions: |
+  <p>In this area, you describe what needs to be done to solve the problem and get the right answer.</p>
+  <p>This is shown right below the left panel text on the screen.</p>
+  <p>Using action-oriented, direct language is best.</p>
+  <p>Make sure to put "code" tags around any variables or values you mention.</p>
+  <p>Example:  Assign <code>20</code> to the variable <code>c</code>.</p>
+answer: |
+  # This space contains the code to get the screen correct.
+  # This code runs *after* all the code in initial_display, so you don't need to duplicate anything.
+  # This code is concatened to the end of initial_display and run to generate the "right" answers.
+  # You'll put all the variables you want to check against the "right" answers in the check_vars list below.
+  # These are the variables that people doing this screen will need to assign to, or manipulate.
+  c = 20
+hint: |
+  <p>This is where you put a hint to help people who are struggling.</p>
+  <p>There is a "hint" button on-screen that people can click to see this.</p>
+check_vars: ['c']
+
+---------
+
+name: Example 1
+type: code
+initial_vars: 1
+left_text: |
+  <p>See the initial_vars key above?  This is where you specify which set of variables you want loaded when the exercise is first shown to the user.</p>
+  <p>The variable sets are specified in the mission metadata (first section at the top), as the vars key.</p>
+  <p>vars is a dictionary, with keys starting with 1 -- you'll need to specify the key here to get a specific set of variables.</p>
+  <p>Now that we have cleaned up data, let's analyze it.</p>
+initial_display: |
+  # The cleaned up data has been loaded into the titanic_survival variable
+  import matplotlib.pyplot as plt
+  import numpy
+instructions: |
+  <p>Plot a histogram of the <code>"age"</code> column in <code>titanic_survival</code>.</p>
+  <p>Add in a blue line for the median.</p>
+  <p>Add in a red line for the mean.</p>
+answer: |
+  plt.hist(titanic_survival["age"])
+  plt.axvline(numpy.median(titanic_survival["age"]), color="b")
+  plt.axvline(titanic_survival["age"].mean(), color="r")
+  plt.show()
+  plt.clf()
+  # Note:  if you want to check if a plot in your answer is correct, you need to add a check_var called dq_plotX, where X is the position (starting with 1) of the plot in the "correct" code (initial display plus answer)
+hint: |
+  <p>The <code>plt.hist()</code> function will make a histogram.</p>
+  <p>The <code>plt.axvline()</code> function will add a line to the plt.</code></p>
+check_vars: ['dq_plot1']
+
+---------
+
+name: Example 2
+type: code
+initial_vars: 1
+left_text: |
+  <p>We use the open function to open files.</p>
+  <p>The open function takes two arguments, the name of the file, and the mode to open it in.</p>
+  <p>There are a few different modes, but the important one right now is 'r', reading mode.</p>
+  <p>We can open a file called 'story.txt' in reading mode by typing open('story.txt', 'r').</p>
+initial_display: |
+  a = open("test.txt", "r")
+  print(type(a))
+instructions: <p>Open the file called <code>"crime_rates.csv"</code> and store it in <code>b</code>.</p>
+answer: |
+  b = open('crime_rates.csv', 'r')
+hint: |
+  Use the open function along with 'r' to open a file in reading mode.
+check_vars: ['b']
+check_code_run: |
+  """
+  Sometimes, for whatever reason, you want to override the default checker behavior.
+  This function lets you do it, but it should be used very sparingly -- the defaults cover 95% of cases.
+  This should return True and an (empty) hint if the answer is correct, and False and a hint if not.
+  Any variable specified in check_vars is automatically injected into this function.
+  """
+  if b is not None:
+      return True, ""
+  return False, ""
+
+---------
+
+name: Example 3
+type: code
+solver: print_values
+left_text: |
+  <p>The print function is used to display values.  We can print out variables and values.</p>
+  <p>In DataQuest, the output from print functions will show up in the results box to the right.</p>
+  <p>Each time you print something, it will output on a new line.</p>
+  <p>Printing complex variables will sometimes take up multiple lines in the results box.</p>
+  <p>Printing is very useful when something isn't working how you expect it to, and you want to debug.</p>
+initial_display: |
+  # We can print out values and variables.
+  print(5)
+  a = 5
+  print(a)
+
+  # Notice how two lines appeared in the results area?
+  # We can also print some values that will take up multiple lines.
+  # The \n character means 'make a new line'
+  print("Hello.\nGoodbye.")
+instructions: <p>Use the <i>print</i> function to print out the <i>string</i> <code>"Good evening"</code>.</p>
+answer: |
+  # We can use the check_val attribute to ensure that certain values are printed
+  print("Good evening")
+hint: |
+  Just print out the string 'Hello'
+check_vars: []
+check_val: |
+  Good evening
+
+---------
