@@ -61,8 +61,12 @@ left_text: |
 
   The "python" tag will let you add code blocks. Here's an example:  
   ```python  
-  numpy_array[0,0] numpy_array[:,0] numpy_array[0,:]  
+  numpy_array[0,0]
+  numpy_array[:,0]
+  numpy_array[0,:]
   ```
+
+  You can add inline math with dollar signs, like this: $$y=mx+b$$.
 initial_display: |
   # This is the area where code is displayed.
   # The initial_display is the code that is shown to the user when the screen is first loaded.
