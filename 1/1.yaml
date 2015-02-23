@@ -25,6 +25,9 @@ vars:
     f = "titanic_survival.csv"
     data = pandas.read_csv(f)
     titanic_survival = data.dropna(subset=["age", "sex"])
+  2: |
+    # Another set of vars
+    b = "hello"
 
 ---------
 
@@ -51,24 +54,25 @@ left_text: |
 
   Any block needs to be indented 2 spaces.
 
-  You can use any valid html tags here.
+  This block is written in [Markdown](http://daringfireball.net/projects/markdown/syntax).  Here's a [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-  The "code" tag will let you write inline variable names like this: `b` is a
+  Using backticks will let you write inline variable names like this: `b` is a
   variable.
 
   Try to do this for all variables and function names -- it makes it easier for
   the reader.
 
-  The "python" tag will let you add code blocks. Here's an example:  
+  Backticks with "python" will let you add code blocks. Here's an example:
+
   ```python  
   numpy_array[0,0]
   numpy_array[:,0]
   numpy_array[0,:]
   ```
-
   You can add inline math with dollar signs, like this: $$y=mx+b$$.
 initial_display: |
   # This is the area where code is displayed.
+  # This is all python code, and will be executed.
   # The initial_display is the code that is shown to the user when the screen is first loaded.
   # You can add comment in here to clarify code, imports, and any code you want.
   b = 10
@@ -91,7 +95,7 @@ initial_display: |
   plt.clf()
 instructions: |
   In this area, you describe what needs to be done to solve the problem and get
-  the right answer.
+  the right answer.  This is in markdown.
 
   This is shown right below the left panel text on the screen.
 
@@ -101,14 +105,14 @@ instructions: |
 
   Example: Assign `20` to the variable `c`.
 answer: |
-  # This space contains the code to get the screen correct.
+  # This space contains the python code to get the screen correct.
   # This code runs *after* all the code in initial_display, so you don't need to duplicate anything.
   # This code is concatened to the end of initial_display and run to generate the "right" answers.
   # You'll put all the variables you want to check against the "right" answers in the check_vars list below.
   # These are the variables that people doing this screen will need to assign to, or manipulate.
   c = 20
 hint: |
-  This is where you put a hint to help people who are struggling.
+  This is where you put a hint to help people who are struggling.  This is written in markdown.
 
   There is a "hint" button on-screen that people can click to see this.
 check_vars: ['c']
@@ -167,7 +171,7 @@ left_text: |
   reading mode.
 
   We can open a file called 'story.txt' in reading mode by typing
-  open('story.txt', 'r').
+  `open('story.txt', 'r')`.
 initial_display: |
   a = open("test.txt", "r")
   print(type(a))

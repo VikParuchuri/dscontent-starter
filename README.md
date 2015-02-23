@@ -38,6 +38,8 @@ Adding content
     * Screen fields:
         * `name` -- Name of screen (user visible)
         * `type` -- Screen type, currently `video` or `code`.
+        * `error_okay` -- indicates if the code in initial_display can contain an error.  Use this when you want to demonstrate errors to the user.
+        * `no_answer_needed` -- used for screens where the user doesn't need to write any code.
         * See the files for the rest of the fields.
 * Put any .csv, .txt, or .db files you want to access in the mission into the *mission folder*.
     * You can refer to these in your solvers by name -- you don't need a path.
