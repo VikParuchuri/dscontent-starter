@@ -37,17 +37,32 @@ video: http://youtu.be/kDDiR7TDGw0
 name: Intro code
 type: code
 left_text: |
-  <p>This is where the text that goes in the left panel of the code screen is written.</p>
-  <p>This text is used to introduce the screen, and describe any background information needed.</p>
-  <p>This file is in .yaml format.</p>
-  <p>Note the vertical line (|) above -- this indicates that this block is a multiline string.  It is suggested to use this for any string -- if you don't, some symbols, like :, can cause issues</p>
-  <p>Any block needs to be indented 2 spaces.</p>
-  <p>You can use any valid html tags here.</p>
-  <p>The "code" tag will let you write inline variable names like this:  <code>b</code> is a variable.</p>
-  <p>Try to do this for all variables and function names -- it makes it easier for the reader.</p>
-  <p>The "python" tag will let you add code blocks.  Here's an example: <python>numpy_array[0,0]
-  numpy_array[:,0]
-  numpy_array[0,:]</python></p>
+  This is where the text that goes in the left panel of the code screen is
+  written.
+
+  This text is used to introduce the screen, and describe any background
+  information needed.
+
+  This file is in .yaml format.
+
+  Note the vertical line (|) above -- this indicates that this block is a
+  multiline string. It is suggested to use this for any string -- if you don't,
+  some symbols, like :, can cause issues
+
+  Any block needs to be indented 2 spaces.
+
+  You can use any valid html tags here.
+
+  The "code" tag will let you write inline variable names like this: `b` is a
+  variable.
+
+  Try to do this for all variables and function names -- it makes it easier for
+  the reader.
+
+  The "python" tag will let you add code blocks. Here's an example:  
+  ```python  
+  numpy_array[0,0] numpy_array[:,0] numpy_array[0,:]  
+  ```
 initial_display: |
   # This is the area where code is displayed.
   # The initial_display is the code that is shown to the user when the screen is first loaded.
@@ -71,11 +86,16 @@ initial_display: |
   plt.show()
   plt.clf()
 instructions: |
-  <p>In this area, you describe what needs to be done to solve the problem and get the right answer.</p>
-  <p>This is shown right below the left panel text on the screen.</p>
-  <p>Using action-oriented, direct language is best.</p>
-  <p>Make sure to put "code" tags around any variables or values you mention.</p>
-  <p>Example:  Assign <code>20</code> to the variable <code>c</code>.</p>
+  In this area, you describe what needs to be done to solve the problem and get
+  the right answer.
+
+  This is shown right below the left panel text on the screen.
+
+  Using action-oriented, direct language is best.
+
+  Make sure to put "code" tags around any variables or values you mention.
+
+  Example: Assign `20` to the variable `c`.
 answer: |
   # This space contains the code to get the screen correct.
   # This code runs *after* all the code in initial_display, so you don't need to duplicate anything.
@@ -84,8 +104,9 @@ answer: |
   # These are the variables that people doing this screen will need to assign to, or manipulate.
   c = 20
 hint: |
-  <p>This is where you put a hint to help people who are struggling.</p>
-  <p>There is a "hint" button on-screen that people can click to see this.</p>
+  This is where you put a hint to help people who are struggling.
+
+  There is a "hint" button on-screen that people can click to see this.
 check_vars: ['c']
 
 ---------
@@ -94,18 +115,26 @@ name: Example 1
 type: code
 initial_vars: 1
 left_text: |
-  <p>See the initial_vars key above?  This is where you specify which set of variables you want loaded when the exercise is first shown to the user.</p>
-  <p>The variable sets are specified in the mission metadata (first section at the top), as the vars key.</p>
-  <p>vars is a dictionary, with keys starting with 1 -- you'll need to specify the key here to get a specific set of variables.</p>
-  <p>Now that we have cleaned up data, let's analyze it.</p>
+  See the initial_vars key above? This is where you specify which set of
+  variables you want loaded when the exercise is first shown to the user.
+
+  The variable sets are specified in the mission metadata (first section at the
+  top), as the vars key.
+
+  vars is a dictionary, with keys starting with 1 -- you'll need to specify the
+  key here to get a specific set of variables.
+
+  Now that we have cleaned up data, let's analyze it.
 initial_display: |
   # The cleaned up data has been loaded into the titanic_survival variable
   import matplotlib.pyplot as plt
   import numpy
 instructions: |
-  <p>Plot a histogram of the <code>"age"</code> column in <code>titanic_survival</code>.</p>
-  <p>Add in a blue line for the median.</p>
-  <p>Add in a red line for the mean.</p>
+  Plot a histogram of the `"age"` column in `titanic_survival`.
+
+  Add in a blue line for the median.
+
+  Add in a red line for the mean.
 answer: |
   plt.hist(titanic_survival["age"])
   plt.axvline(numpy.median(titanic_survival["age"]), color="b")
@@ -114,8 +143,9 @@ answer: |
   plt.clf()
   # Note:  if you want to check if a plot in your answer is correct, you need to add a check_var called dq_plotX, where X is the position (starting with 1) of the plot in the "correct" code (initial display plus answer)
 hint: |
-  <p>The <code>plt.hist()</code> function will make a histogram.</p>
-  <p>The <code>plt.axvline()</code> function will add a line to the plt.</code></p>
+  The `plt.hist()` function will make a histogram.
+
+  The `plt.axvline()` function will add a line to the plt.`
 check_vars: ['dq_plot1']
 
 ---------
@@ -124,14 +154,21 @@ name: Example 2
 type: code
 initial_vars: 1
 left_text: |
-  <p>We use the open function to open files.</p>
-  <p>The open function takes two arguments, the name of the file, and the mode to open it in.</p>
-  <p>There are a few different modes, but the important one right now is 'r', reading mode.</p>
-  <p>We can open a file called 'story.txt' in reading mode by typing open('story.txt', 'r').</p>
+  We use the open function to open files.
+
+  The open function takes two arguments, the name of the file, and the mode to
+  open it in.
+
+  There are a few different modes, but the important one right now is 'r',
+  reading mode.
+
+  We can open a file called 'story.txt' in reading mode by typing
+  open('story.txt', 'r').
 initial_display: |
   a = open("test.txt", "r")
   print(type(a))
-instructions: <p>Open the file called <code>"crime_rates.csv"</code> and store it in <code>b</code>.</p>
+instructions: |
+  Open the file called `"crime_rates.csv"` and store it in `b`.
 answer: |
   b = open('crime_rates.csv', 'r')
 hint: |
@@ -152,13 +189,20 @@ check_code_run: |
 
 name: Example 3
 type: code
-solver: print_values
 left_text: |
-  <p>The print function is used to display values.  We can print out variables and values.</p>
-  <p>In DataQuest, the output from print functions will show up in the results box to the right.</p>
-  <p>Each time you print something, it will output on a new line.</p>
-  <p>Printing complex variables will sometimes take up multiple lines in the results box.</p>
-  <p>Printing is very useful when something isn't working how you expect it to, and you want to debug.</p>
+  The print function is used to display values. We can print out variables and
+  values.
+
+  In DataQuest, the output from print functions will show up in the results box
+  to the right.
+
+  Each time you print something, it will output on a new line.
+
+  Printing complex variables will sometimes take up multiple lines in the
+  results box.
+
+  Printing is very useful when something isn't working how you expect it to, and
+  you want to debug.
 initial_display: |
   # We can print out values and variables.
   print(5)
@@ -169,7 +213,8 @@ initial_display: |
   # We can also print some values that will take up multiple lines.
   # The \n character means 'make a new line'
   print("Hello.\nGoodbye.")
-instructions: <p>Use the <i>print</i> function to print out the <i>string</i> <code>"Good evening"</code>.</p>
+instructions: |
+  Use the _print_ function to print out the _string_ `"Good evening"`.
 answer: |
   # We can use the check_val attribute to ensure that certain values are printed
   print("Good evening")

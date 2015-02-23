@@ -9,19 +9,25 @@ under_construction: False
 file_list: []
 mission_number: 2
 demo: False
-vars:
 ---------
 
 name: The interface
 type: code
-solver: introduction
 left_text: |
-  <p>Welcome to DataQuest!</p>
-  <p>Before we dive into the data, we'll spend a few screens learning about the interface.</p>
-  <p>This box is the instructions area.  The box to the right is the code area, where you type in code.</p>
-  <p>The results and variables areas are used to show data about the code being run.  We'll learn more about these later on.</p>
-  <p>For now, take a look at the instructions below.</p>
-  <p>Then look at the code area.</p>
+  Welcome to DataQuest!
+
+  Before we dive into the data, we'll spend a few screens learning about the
+  interface.
+
+  This box is the instructions area. The box to the right is the code area,
+  where you type in code.
+
+  The results and variables areas are used to show data about the code being
+  run. We'll learn more about these later on.
+
+  For now, take a look at the instructions below.
+
+  Then look at the code area.
 initial_display: |
   # We'll be coding in python.
   # Python is a great general purpose language, and is used in a lot of data science and machine learning applications.
@@ -29,8 +35,10 @@ initial_display: |
   # In python, any line that starts with a # is called a comment, and is used to put in notes and messages.
   # It isn't part of the code, and isn't executed.
 instructions: |
-  <p>Add in your own comment, and then hit "Run" to execute the code.</p>
-  <p>You can also use <code>ctrl+alt+r</code> to run code.  Click on the instructions panel, then type <code>?</code> to see all the hotkeys.</p>
+  Add in your own comment, and then hit "Run" to execute the code.
+
+  You can also use `ctrl+alt+r` to run code. Click on the instructions panel,
+  then type `?` to see all the hotkeys.
 answer: |
   # This is a comment.
 hint: |
@@ -43,17 +51,20 @@ check_val: |
 
 name: Navigation
 type: code
-solver: results
 left_text: |
-  <p>You can use the dropdown above to move between screens.</p>
-  <p>You can jump forward to skip material you already know, or go backwards to refresh your understanding of a concept.</p>
-  <p>Your progress and code are always saved.</p>
+  You can use the dropdown above to move between screens.
+
+  You can jump forward to skip material you already know, or go backwards to
+  refresh your understanding of a concept.
+
+  Your progress and code are always saved.
 initial_display: |
   # The results area to the right will show the output of the code that is executed.
   # Output will show when you use the print function.
   # For example, the line below will print out 10.
   print(10)
-instructions: <p>Use the <i>print</i> function to print out <code>5</code></p>
+instructions: |
+  Use the _print_ function to print out `5`
 answer: |
   print(5)
 hint: |
@@ -66,9 +77,8 @@ check_val: |
 
 name: Variables
 type: code
-solver: variables
 left_text: |
-  <p>Variables are used to store values.</p>
+  Variables are used to store values.
 initial_display: |
   # The variables area to the lower right shows which variables are defined in the code, and their values.
   # If the value of the variable is too long to display, it will instead show the type.
@@ -76,20 +86,22 @@ initial_display: |
   # For example, we can store the value 10 to b.
   # The equals sign assigns the value on the right to the variable on the left.
   b = 10
-instructions: <p>Assign <code>5</code> to the variable <code>a</code>.</p>
+instructions: |
+  Assign `5` to the variable `a`.
 answer: |
   a = 5
 hint: |
-  Just remember that the equals sign assigns the value on the right to the variable on the left.
+  Just remember that the equals sign assigns the value on the right to the
+  variable on the left.
 check_vars: ['a']
 
 ---------
 
 name: Types of variables
 type: code
-solver: variable_types
 left_text: |
-  <p>Different variables can have different types.  Types are useful when it comes time to do computation.</p>
+  Different variables can have different types. Types are useful when it comes
+  time to do computation.
 initial_display: |
   # A number without decimals is an integer type.
   # An integer can hold negative and positive values
@@ -111,13 +123,15 @@ initial_display: |
   g = e * f
 
   # There are other types that we will learn about later on.
-instructions: <p>Assign an <i>integer</i> to <code>h</code>, a <i>string</i> to <code>i</code>, and a <i>float</i> to <code>j</code>.</p>
+instructions: |
+  Assign an _integer_ to `h`, a _string_ to `i`, and a _float_ to `j`.
 answer: |
   h = 1
   i = "Strings are great."
   j = 5.1
 hint: |
-  Use the equals sign to assign the value on the right to the variable on the left.
+  Use the equals sign to assign the value on the right to the variable on the
+  left.
 check_vars: ['h', 'i', 'j']
 check_code_run: |
   if h is not None and i is not None and j is not None:
@@ -129,10 +143,12 @@ check_code_run: |
 
 name: Finding the type of a variable
 type: code
-solver: type_function
 left_text: |
-  <p>We can use the type function to display the type of a variable.  A function is a named chunk of code that takes certain inputs and gives you an output.</p>
-  <p>You can use functions by typing their name, and passing in the inputs.  Some functions can have multiple input values.</p>
+  We can use the type function to display the type of a variable. A function is
+  a named chunk of code that takes certain inputs and gives you an output.
+
+  You can use functions by typing their name, and passing in the inputs. Some
+  functions can have multiple input values.
 initial_display: |
   # The type function has only one input value.
   a = type(5)
@@ -145,23 +161,27 @@ initial_display: |
   b = "DataQuest is the best thing ever"
   # Note how when the type for b is printed, it is abbreviated to str.
   print(type(b))
-instructions: <p>Assign the <i>type</i> of <code>10</code> to <code>c</code>, the <i>type</i> of <code>"racecar"</code> to <code>d</code>, and the <i>type</i> of <code>10.6</code> to <code>e</code>.</p>
+instructions: |
+  Assign the _type_ of `10` to `c`, the _type_ of `"racecar"` to `d`, and the
+  _type_ of `10.6` to `e`.
 answer: |
   c = type(10)
   d = type("racecar")
   e = type(10.6)
 hint: |
-  Remember that c = type(5) assigns the type of 5 to the variable c.  d = type('test') will assign the type of 'test' to d.
+  Remember that c = type(5) assigns the type of 5 to the variable c. d =
+  type('test') will assign the type of 'test' to d.
 check_vars: ['c', 'd', 'e']
 
 ---------
 
 name: Overwriting variables
 type: code
-solver: overwrite_variable
 left_text: |
-  <p>We can overwrite variables with new values whenever we want.</p>
-  <p>The variable will only store the most recent value that has been assigned to it.</p>
+  We can overwrite variables with new values whenever we want.
+
+  The variable will only store the most recent value that has been assigned to
+  it.
 initial_display: |
   a = 5.1
   b = 5
@@ -172,7 +192,8 @@ initial_display: |
   # It doesn't matter if the new values are different types -- they will still overwrite the variable.
   a = "test"
   b = 5.1
-instructions: <p>Assign <code>10</code> to <code>a</code>, and <code>"Antarctica is not a country"</code> to <code>b</code>.</p>
+instructions: |
+  Assign `10` to `a`, and `"Antarctica is not a country"` to `b`.
 answer: |
   a = 10
   b = "Antarctica is not a country"
@@ -184,13 +205,20 @@ check_vars: ['a', 'b']
 
 name: More on printing
 type: code
-solver: print_values
 left_text: |
-  <p>The print function is used to display values.  We can print out variables and values.</p>
-  <p>In DataQuest, the output from print functions will show up in the results box to the right.</p>
-  <p>Each time you print something, it will output on a new line.</p>
-  <p>Printing complex variables will sometimes take up multiple lines in the results box.</p>
-  <p>Printing is very useful when something isn't working how you expect it to, and you want to debug.</p>
+  The print function is used to display values. We can print out variables and
+  values.
+
+  In DataQuest, the output from print functions will show up in the results box
+  to the right.
+
+  Each time you print something, it will output on a new line.
+
+  Printing complex variables will sometimes take up multiple lines in the
+  results box.
+
+  Printing is very useful when something isn't working how you expect it to, and
+  you want to debug.
 initial_display: |
   # We can print out values and variables.
   print(5)
@@ -201,7 +229,8 @@ initial_display: |
   # We can also print some values that will take up multiple lines.
   # The \n character means 'make a new line'
   print("Hello.\nGoodbye.")
-instructions: <p>Use the <i>print</i> function to print out the <i>string</i> <code>"Good evening"</code>.</p>
+instructions: |
+  Use the _print_ function to print out the _string_ `"Good evening"`.
 answer: |
   print("Good evening")
 hint: |
@@ -214,15 +243,26 @@ check_val: |
 
 name: Debug mode
 type: code
-solver: interactive_mode
 left_text: |
-  <p>You might have seen the <i>Debug</i> button at the bottom.</p>
-  <p>This button will switch you into <i>debug mode</i>, and let you execute the code line by line.</p>
-  <p>You can use the control buttons in debug mode to step forward one line, backwards one line, or go all the way to the beginning or end of the code.</p>
-  <p>This can be really useful when you have complex code with functions and if statements (which we'll learn about later) that you need help understanding.</p>
-  <p>It can also be useful when there is an error in your code and you want to find out why it is happening.</p>
-  <p>The blue marker at the left indicates which line is about to be executed.  All lines before it have already been run.</p>
-  <p>The variables and results on the right are shown in order, and update as you move through the code.</p>
+  You might have seen the _Debug_ button at the bottom.
+
+  This button will switch you into _debug mode_, and let you execute the code
+  line by line.
+
+  You can use the control buttons in debug mode to step forward one line,
+  backwards one line, or go all the way to the beginning or end of the code.
+
+  This can be really useful when you have complex code with functions and if
+  statements (which we'll learn about later) that you need help understanding.
+
+  It can also be useful when there is an error in your code and you want to find
+  out why it is happening.
+
+  The blue marker at the left indicates which line is about to be executed. All
+  lines before it have already been run.
+
+  The variables and results on the right are shown in order, and update as you
+  move through the code.
 initial_display: |
   # Comments aren't executed, so debug mode skips them.
   # But other lines can be stepped through.
@@ -230,13 +270,15 @@ initial_display: |
   a = 10
   print(a)
 instructions: |
-  <p>Try stepping through the code above.</p>
-  <p>Feel free to add in new variables or print functions if you want.</p>
-  <p>Hit "Next" to move to the next screen when you're done.</p>
+  Try stepping through the code above.
+
+  Feel free to add in new variables or print functions if you want.
+
+  Hit "Next" to move to the next screen when you're done.
 answer: |
   #
 hint: |
-  <p>Just hit "Next" to move forward.</p>
+  Just hit "Next" to move forward.
 check_vars: []
 no_answer_needed: True
 
@@ -244,12 +286,18 @@ no_answer_needed: True
 
 name: Python 2 vs 3
 type: code
-solver: python_2
 left_text: |
-  <p>One last thing before we get started -- in this course, we'll be using Python version 3 (or just Python 3).</p>
-  <p>There are two major versions right now, 2 and 3.  3 is newer, and has some nice new features.</p>
-  <p>For a long time, nobody used Python 3, because most code was only compatible with Python 2.</p>
-  <p>Over the past few years, people have put in a lot of effort to make most Python code compatible with Python 3.</p>
+  One last thing before we get started -- in this course, we'll be using Python
+  version 3 (or just Python 3).
+
+  There are two major versions right now, 2 and 3. 3 is newer, and has some nice
+  new features.
+
+  For a long time, nobody used Python 3, because most code was only compatible
+  with Python 2.
+
+  Over the past few years, people have put in a lot of effort to make most
+  Python code compatible with Python 3.
 initial_display: |
   # The major difference that you will immediately notice between python 2 and 3 is the print function.
   # The function below will work in Python 2 and 3.
@@ -260,11 +308,12 @@ initial_display: |
   print 10
 
   # For now, you don't need to worry too much about Python 2, but it's good to be aware of the differences.
-instructions: <p>Hit "Next" to move to the next screen.</p>
+instructions: |
+  Hit "Next" to move to the next screen.
 answer: |
   #
 hint: |
-  <p>Are you sure you hit the next button?</p>
+  Are you sure you hit the next button?
 check_vars: []
 no_answer_needed: True
 
