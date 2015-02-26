@@ -8,7 +8,6 @@ premium: False
 under_construction: True
 file_list: ['test.txt', 'crime_rates.csv', 'titanic_survival.csv']
 mission_number: 1
-demo: False
 imports: |
   # You can add whatever code you want here -- this will be imported before code in vars is run.
   # If you have any libraries or functions you want to define to compute the initial vars, here is the place.

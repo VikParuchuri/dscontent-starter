@@ -32,7 +32,6 @@ Adding content
         * `under_construction` -- True/False indicating whether mission is being built, or is done.
         * `file_list` -- list of files you want to reference in the mission.  These files should be in `missions/data/resources`.  Don't specify a path, just a filename.
         * `mission_number` -- the number of the mission.  This should be the same as the folder name and the start of the outline name.
-        * `demo` -- whether or not the mission is a demo with a few screens instead of a whole mission.
         * `imports` -- code to run before computing the variable sets.
         * `vars` -- code for the variable sets.
     * Screen fields:
