@@ -303,10 +303,6 @@ initial_display: |
   # The function below will work in Python 2 and 3.
   print(10)
 
-  # This will only work in Python 2, and is called a print statement.
-  # It will cause an error in Python 3, as you can see to the right.
-  print 10
-
   # For now, you don't need to worry too much about Python 2, but it's good to be aware of the differences.
 instructions: |
   Hit "Next" to move to the next screen.
