@@ -38,13 +38,14 @@ To upload content, first visit [Dataquest](https://www.dataquest.io) and make an
 
 After you linked your repo, you can upload and test content.
 
-* Run `dqauthor generate .` to generate mission files from the notebooks in the current directory. 
 * Commit your local repo changes and push them to github.
     * `git add .`
     * `git commit -m "Added more content"`
     * `git push origin master`
 * Now, run `dqauthor sync` -- this will let you pick the repo to sync, and then will pull the changes over to dataquest.
+    * If this fails, your notebooks may not be structured properly.  Look at the error messages and retry.
 * Run `dqauthor test` to test your mission to see if everything works properly.
+    * If you see any errors, fix them before publishing.
 * If you want to see how your missions look, or publish them live, visit [the sync page](https://dataquest.io/creator/sync_missions).
 
 
@@ -195,6 +196,8 @@ Running `dqauthor generate .` will generate yaml files from any notebooks in the
 
 Running the command will make a folder called `missions` (if it doesn't exist already), and make a separate folder inside for each mission.  Each mission folder will have a `.yaml` file containing its definition, as well as any resource files needed for the mission.
 
+This is automatically done when syncing, so you don't need to run it yourself, but it can be a good debugging check to make sure your missions are structured properly.
+
 
 Removing content
 -------------------
@@ -206,4 +209,6 @@ Then, delete any generated mission folders in `mission` for those notebooks.
 The sections.json file
 --------------------
 
-The `sections.json` file in the `missions` folder is useful if you're running a dataquest server locally and want to add new content.  If you aren't, it's safe to ignore this file.
+The `sections.json` file is useful if you're running a dataquest server locally and want to add new content.  If you aren't, it's safe to ignore this file for now.
+
+Eventually, this will be used to create courses that are sequences of lessons.
