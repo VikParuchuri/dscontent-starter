@@ -173,6 +173,21 @@ The only required field is `Display`.  If you provide an `Answer`, then you must
 
 Each mission can have as many screens as you want.
 
+Caveats!
+--------------------
+
+We're always iterating dataquest to make it easier to develop content for, but there are a few important caveats for now:
+
+* Instances of custom classes can't be passed between screens in singlescreen mode.
+    * You'll need to use the "Initial" section to recreate the instance in subsequent screens.
+* Custom classes can't be checked for correctness.  There isn't a workaround to this right now.
+* The "Initial" section is carred to subsequent screens.  This means that you don't need to keep adding the same code to the initial section.
+* In "multiscreen" mode, each screen (aside from the Initial section) is self-contained, and won't receive variables from previous screens.
+    * Thus, something that works in ipython notebook may not work in multiscreen mode.
+* The only available packages are the ones in requirements.txt.
+    * We're working on support for custom packages and versions.
+* Files shouldn't be larger than ~2MB -- any larger makes the execution take too long, and reduces student experience.
+
 Generated yaml files
 ---------------------
 

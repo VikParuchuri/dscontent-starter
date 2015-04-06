@@ -6,6 +6,71 @@ author: Vik Paruchuri
 file_list: []
 mission_number: 2
 mode: multiscreen
+vars:
+  1: |
+    
+  2: |
+    
+    
+  3: |
+    
+    
+    
+    
+  4: |
+    
+    
+    
+    
+    
+    
+  5: |
+    
+    
+    
+    
+    
+    
+    
+    
+  6: |
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  7: |
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  8: |
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 --------
 
@@ -43,6 +108,7 @@ instructions: |
   
   You can also use `ctrl+alt+r` to run code. Click on the instructions panel,
   then type `?` to see all the hotkeys.
+initial_vars: 1
 
 --------
 
@@ -68,6 +134,7 @@ check_val: |
   5
 instructions: |
   Use the _print_ function to print out `5`
+initial_vars: 2
 
 --------
 
@@ -112,6 +179,7 @@ check_code_run: |
   return False, ""
 instructions: |
   Assign an _integer_ to `h`, a _string_ to `i`, and a _float_ to `j`.
+initial_vars: 3
 
 --------
 
@@ -144,6 +212,7 @@ hint: |
   Remember that c = type(5) assigns the type of 5 to the variable c. d = type('test') will assign the type of 'test' to d.
 instructions: |
   Assign the _type_ of `10` to `c`, the _type_ of `"racecar"` to `d`, and the _type_ of `10.6` to `e`.
+initial_vars: 4
 
 --------
 
@@ -172,6 +241,7 @@ hint: |
   Just assign the new values to the existing variables.
 instructions: |
   Assign `10` to `a`, and `"Antarctica is not a country"` to `b`.
+initial_vars: 5
 
 --------
 
@@ -209,6 +279,7 @@ check_val: |
   Good evening
 instructions: |
   Use the _print_ function to print out the _string_ `"Good evening"`.
+initial_vars: 6
 
 --------
 
@@ -247,6 +318,7 @@ instructions: |
   Feel free to add in new variables or print functions if you want.
   
   Hit "Next" to move to the next screen when you're done.
+initial_vars: 7
 
 --------
 
@@ -273,5 +345,6 @@ initial_display: |
   # For now, you don't need to worry too much about Python 2, but it's good to be aware of the differences.
 instructions: |
   Hit "Next" to move to the next screen.
+initial_vars: 8
 
 --------
